@@ -1,0 +1,121 @@
+.appStyle {
+
+    .home_page {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .home_right {
+            width: 60%;
+
+            .two_inputs {
+                display: flex;
+
+            }
+
+            .input_container {
+                width: 50%;
+            }
+
+            .input_container_3 {
+                width: 30%;
+            }
+
+            .input_container_2a {
+                width: 80%;
+            }
+
+            .input_container_2b {
+                width: 20%;
+            }
+        }
+
+        .home_left {
+            width: 35%;
+
+            .form_data {
+                text-align: center;
+            }
+
+            .img_card {
+                position: relative;
+                top: -75px;
+            }
+
+            .img_radius {
+                border-radius: 50%;
+            }
+
+            .content_card {
+                position: relative;
+                top: -80px;
+            }
+
+            .btnStyle {
+                width: 100%;
+                height: 30px;
+                background-color: black;
+                border-radius: 20px;
+                border: 1px solid black;
+                color: white;
+            }
+
+            .btnstyle2a {
+                width: 100%;
+                height: 30px;
+                background-color: rgb(70, 70, 246);
+                border-radius: 20px;
+                border: 1px solid rgb(70, 70, 246);
+                color: black;
+            }
+
+            .second {
+                margin-top: 30px;
+                display: flex;
+            }
+
+            .title {
+                font-size: 30px;
+                margin: 5px;
+            }
+
+            .second_img {
+                border-radius: 10px;
+            }
+
+            .below_img {
+                margin: 20px;
+            }
+        }
+
+        .flex_inputs {
+            display: flex;
+        }
+
+        .inputStyle {
+            width: 90%;
+            height: 30px;
+        }
+
+    }
+
+    .form_card {
+        padding: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+
+    .contentBtn {
+        justify-content: center;
+    }
+
+    .icon_style {
+        display: flex;
+    }
+
+    .error {
+        color: red;
+    }
+
+    // color:  red;
+}
