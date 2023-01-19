@@ -145,7 +145,7 @@ const UserForm = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.phone}
-                      placeholder="+91987654321"
+                      placeholder="+919800654321"
                       className="inputStyle"
                     />
                     <p className="error">
@@ -205,7 +205,7 @@ const UserForm = () => {
                     </div>
                     <div className="input_container_3">
                       <p>Select state</p>
-                      <input
+                      <select
                         type="text"
                         name="state"
                         onChange={handleChange}
@@ -213,7 +213,13 @@ const UserForm = () => {
                         value={values.state}
                         placeholder="State"
                         className="inputStyle"
-                      />
+                        >
+                          <option></option>
+                          <option>Andhrapradesh</option>
+                          <option>Telangana</option>
+                          <option>Kerala</option>
+                        </select>
+                      
                       <p className="error">
                         {errors.state && touched.state && errors.state}
                       </p>

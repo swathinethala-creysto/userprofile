@@ -1,6 +1,26 @@
-import React from "react";
-import file_attach from "./file_attach.png";
-function UserProfile() {
+import React,{useState} from "react";
+import file_attach from "../Asserts/file_attach.png";
+import pic from "../Asserts/pic.jpg";
+import background from "../Asserts//background.jpeg";
+import pp1 from "../Asserts//pp1.jpg";
+const UserProfile=()=> {
+  const [propic, setPropic] = useState(null)
+  function previewFile() {
+    const file = document.querySelector("input[type=file]").files[0];
+    const reader = new FileReader();
+    reader.addEventListener(
+      "load",
+      () => {
+        setPropic(reader.result)
+        
+        // setImgAdd((prv) => !prv);
+      },
+      false
+    );
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
   return (
     <div>
       <div className="form_card">
@@ -8,14 +28,14 @@ function UserProfile() {
           <div>
             <div>
               <img
-                src="https://media.istockphoto.com/id/518256134/photo/charminar.jpg?s=612x612&w=0&k=20&c=El2-xCRHhkaDHJwz4cUzNmJ8E_FVAqwutwQIvn4vReA="
+                src={background}
                 alt="John"
-                style={{ width: "100%" }}
+                style={{ width: "100%", height:"200px" }}
               />
               <div className="img_card">
                 <img
+                 src={pp1}
                   alt="myimg"
-                  src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg"
                   width="50%"
                   height="50%"
                   className="img_radius"
@@ -40,10 +60,11 @@ function UserProfile() {
           </div>
         </div>
       </div>
-      <div className="form_card second">
+            <div className="form_card second">
         <div className="below_img">
+        
           <img
-            src="https://media.istockphoto.com/id/518256134/photo/charminar.jpg?s=612x612&w=0&k=20&c=El2-xCRHhkaDHJwz4cUzNmJ8E_FVAqwutwQIvn4vReA="
+            src={propic||pic}
             alt="below"
             width="100px"
             height="100px"
@@ -52,21 +73,23 @@ function UserProfile() {
         </div>
         <div>
           <div className="icon_style">
-            <div>
-              <img
-              src={file_attach}
-            alt="below"
-            width="20px"
-            height="20px"
-            className="second_img"
+            <div style={{paddingTop:'20px'}}>
+               <input id="fileInput" type="file" onChange={previewFile} style={{visibility:'hidden', width:'1px'}} />
+             <img
+               src={file_attach}
+               alt="below"
+               width="20px"
+               height="20px"
+               className="second_img"
+               onClick={()=>{
+            document.getElementById('fileInput').click()}}
           />
             </div>
             <div>
               <h4 className="title">choose Image</h4>
            </div>
        </div>
-          
-           <div>JPG,GIF or PNG </div>
+                   <div>JPG,GIF or PNG </div>
         </div>
       </div>
     </div>
